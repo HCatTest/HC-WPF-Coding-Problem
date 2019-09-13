@@ -1,0 +1,8 @@
+.vs/
+packages/
+WPFUserSearch.Data/bin/
+WPFUserSearch.Data/obj/
+WPFUserSearch/bin/
+WPFUserSearch/obj/
+WPFUserSearch.UnitTests/bin/
+WPFUserSearch.UnitTests/obj/
