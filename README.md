@@ -1,2 +1,2 @@
-# HC-WPF-Coding-Problem-
+# HC-WPF-Coding-Problem
 Health Catalyst - Technical Assessment 
