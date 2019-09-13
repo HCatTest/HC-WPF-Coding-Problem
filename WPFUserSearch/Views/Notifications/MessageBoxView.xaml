@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="WPFUserSearch.Views.MessageBoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             Background="#FFDDDDDD">
+
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" Margin="10"
+                          VerticalAlignment="Top"
+                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <TextBlock VerticalAlignment="Top"
+                           FontSize="16" TextWrapping="Wrap"
+                           Text="{Binding Path=Notification.Message, FallbackValue=Message}">
+                </TextBlock>
+            </ScrollViewer>
+
+            <Grid Grid.Row="1" Margin="5"
+                  VerticalAlignment="Bottom" HorizontalAlignment="Right">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Margin="5,0,0,0"
+                        Width="90"
+                        HorizontalAlignment="Right"
+                        Visibility="{Binding Path=ButtonOKIsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Command="{Binding Path=CommandInteraction}"
+                        CommandParameter="OK">
+                    <Button.Content>
+                        OK
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Column="1" Margin="5,0,0,0"
+                        Width="90"
+                        HorizontalAlignment="Right"
+                        Visibility="{Binding Path=ButtonCancelIsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Command="{Binding Path=CommandInteraction}"
+                        CommandParameter="Cancel">
+                    <Button.Content>
+                        Cancel
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Column="2" Margin="5,0,0,0"
+                        Width="90"
+                        HorizontalAlignment="Right"
+                        Visibility="{Binding Path=ButtonYesIsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Command="{Binding Path=CommandInteraction}"
+                        CommandParameter="Yes">
+                    <Button.Content>
+                        Yes
+                    </Button.Content>
+                </Button>
+
+                <Button Grid.Column="3" Margin="5,0,0,0"
+                        Width="90"
+                        HorizontalAlignment="Right"
+                        Visibility="{Binding Path=ButtonNoIsVisible, Mode=TwoWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Command="{Binding Path=CommandInteraction}"
+                        CommandParameter="No">
+                    <Button.Content>
+                        No
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>
